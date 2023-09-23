@@ -5,6 +5,8 @@ body{
     align-items: center;
     justify-content: center;
     height: 100vh;
+    width: 100%;
+    position: fixed;
 }
 .container{
     max-width: 1200px;
@@ -45,8 +47,9 @@ body{
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+                justify-content: center;
                 background-color: #14cdc8;
-                line-height: 4px;
+                line-height: 8px;
                 border-radius: .825rem;
                 text-transform: uppercase;
             }
