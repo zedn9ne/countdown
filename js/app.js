@@ -38,8 +38,8 @@ month = months[month];
 
 const date = futureDate.getDate();
 let days = futureDate.getDay();
-
 days = weekdays[futureDate.getDay()];
+
 giveaway.textContent = `freiheit ist am ${days} , ${date} ${month} ${year} um ${hours}0:${minutes}0pm  `
 
 // future time in ms
@@ -48,17 +48,17 @@ const futureTime = futureDate.getTime();
 
 function getRemainingTime() {
     const today = new Date().getTime();
-    const t = futureDate - today;
+    const t = futureDate - today;   // our time distance
     // console.log(t);
 
     // values in ms
     const oneDay = 24 * 60 * 60 * 1000;
     const oneHour = 60 * 60 * 1000;
     const oneMinute = 60 * 1000;
+
     // clculate all values
 
-    let day = t / oneDay;
-    day = Math.floor(day)
+    let day = Math.floor(t / oneDay)
     let hour = Math.floor((t % oneDay) / oneHour);
     let mins = Math.floor((t % oneHour) / oneMinute);
     let seconds = Math.floor((t % oneMinute) / 1000);
@@ -78,19 +78,14 @@ function getRemainingTime() {
 
     if (t < 0) {
         clearInterval(countdown);
-        deadline.innerHTML = `<h1>Congratulation strong man i am proud of you;
-        go ... <br>
-        go and catch your drems.
-        i love you
-
-
+        deadline.innerHTML = `<h1>Congratulation strong man i am proud of you;go ... <br>go and catch your drems.i love you <br>
         'frankfurt im coming'
     </h1>`
     }
 }
+
 //  countdown 
 let countdown = setInterval(getRemainingTime, 1000);
-
 getRemainingTime();
 
 
